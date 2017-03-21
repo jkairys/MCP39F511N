@@ -359,9 +359,9 @@ uint8_t MCP39F511N::_set_rx_status(uint8_t status){
 
 float MCP39F511N::getFrequency(){ return ((float)this->frequency) / MCP_FREQUENCY_DIVISOR; }
 float MCP39F511N::getVolts()    { return ((float)this->volts)   / ((float)pow(10, this->_precisionVolts)) ; }
-float MCP39F511N::getAmps1()    { return ((float)this->amps1)   / ((float)pow(10,this->divisor1)) * ((ssr && MCP_SSR_SIGN_PA_CH1) ? 1 : -1); }
-float MCP39F511N::getWatts1()   { return ((float)this->watts1)  / ((float)pow(10,this->divisor1)) * ((ssr && MCP_SSR_SIGN_PA_CH1) ? 1 : -1); }
-float MCP39F511N::getVars1()    { return ((float)this->vars1)   / ((float)pow(10,this->divisor1)) * ((ssr && MCP_SSR_SIGN_PR_CH1) ? 1 : -1); }
-float MCP39F511N::getAmps2()    { return ((float)this->amps2)   / ((float)pow(10,this->_precisionAmps2)) * ((ssr && MCP_SSR_SIGN_PA_CH2) ? 1 : -1); }     // 4
-float MCP39F511N::getWatts2()   { return ((float)this->watts2)  / ((float)pow(10,this->_precisionPower2)) * ((ssr && MCP_SSR_SIGN_PA_CH2) ? 1 : -1); }    // 2
-float MCP39F511N::getVars2()    { return ((float)this->vars2)   / ((float)pow(10,this->_precisionPower2)) * ((ssr && MCP_SSR_SIGN_PR_CH2) ? 1 : -1); }    // 2
+float MCP39F511N::getAmps1()    { return ((float)this->amps1)   / ((float)pow(10, this->_precisionAmps2)) * ((ssr && MCP_SSR_SIGN_PA_CH1) ? 1 : -1); }
+float MCP39F511N::getWatts1()   { return ((float)this->watts1)  / ((float)pow(10, this->_precisionPower2)) * ((ssr && MCP_SSR_SIGN_PA_CH1) ? 1 : -1); }
+float MCP39F511N::getVars1()    { return ((float)this->vars1)   / ((float)pow(10, this->_precisionPower2)) * ((ssr && MCP_SSR_SIGN_PR_CH1) ? 1 : -1); }
+float MCP39F511N::getAmps2()    { return ((float)this->amps2)   / ((float)pow(10, this->_precisionAmps2)) * ((ssr && MCP_SSR_SIGN_PA_CH2) ? 1 : -1); }     // 4
+float MCP39F511N::getWatts2()   { return ((float)this->watts2)  / ((float)pow(10, this->_precisionPower2)) * ((ssr && MCP_SSR_SIGN_PA_CH2) ? 1 : -1); }    // 2
+float MCP39F511N::getVars2()    { return ((float)this->vars2)   / ((float)pow(10, this->_precisionPower2)) * ((ssr && MCP_SSR_SIGN_PR_CH2) ? 1 : -1); }    // 2

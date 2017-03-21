@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 
-#define DEBUG
+//#define MCP_DEBUG
 
-#ifdef DEBUG
+#ifdef MCP_DEBUG
  #define DEBUG_PRINT(x)  Serial.println (x)
 #else
  #define DEBUG_PRINT(x)
@@ -11,7 +11,7 @@
 
 // Configuration
 #define MCP_BUFFER_LEN 64
-#define MCP_TIMEOUT_MS 1000
+#define MCP_TIMEOUT_MS 100
 
 // Constants
 #define MCP_HEADER_BYTE 0xA5
