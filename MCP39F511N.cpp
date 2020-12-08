@@ -31,12 +31,9 @@ uint32_t MCP39F511N::read_long(uint8_t addr){
   return ret;
 }
 
-
-MCP39F511N::MCP39F511N(uint8_t pin_rx, uint8_t pin_tx, uint32_t baud_rate){
-  this->_ser = new SoftwareSerial(pin_rx, pin_tx, false, MCP_BUFFER_LEN);
-  this->_ser->begin(19200);
+MCP39F511N::MCP39F511N(Stream* ser){
+  this->_ser = ser;
 }
-
 
 void MCP39F511N::_clearBuffer(){
   //DEBUG_PRINT("_clearBuffer");
