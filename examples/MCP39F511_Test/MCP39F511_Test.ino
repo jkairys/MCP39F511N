@@ -10,8 +10,8 @@ HardwareSerial Serial1(2);
 #else
 #import <SoftwareSerial.h>
 #define RX_PIN 10
-#define RX_PIN 11
-SoftwareSerial Serial1(RX_PIN, RX_PIN, false, MCP_BUFFER_LEN);
+#define TX_PIN 11
+SoftwareSerial Serial1(RX_PIN, TX_PIN, false, MCP_BUFFER_LEN);
 #endif
 
 MCP39F511N mcp_emon = MCP39F511N(&Serial1);
