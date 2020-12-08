@@ -1,9 +1,5 @@
 #include <Arduino.h>
 
-#if not defined(ESP32)
-#include <SoftwareSerial.h>
-#endif
-
 //#define MCP_DEBUG
 
 #ifdef MCP_DEBUG
