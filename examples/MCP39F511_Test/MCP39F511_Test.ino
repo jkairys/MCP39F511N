@@ -16,11 +16,9 @@ SoftwareSerial Serial1(RX_PIN, TX_PIN, false, MCP_BUFFER_LEN);
 
 MCP39F511N mcp_emon = MCP39F511N(&Serial1);
 
-#define TEST_COMMAND {0xA5, 0x08, 0x41, 0x00, 0x02,  0x4E, 0x20, 0x5E}
-
 void setup() {
   Serial.begin(9600);
-  Serial1.begin(115200);
+  Serial1.begin(9600);
 }
 
 void loop() {
