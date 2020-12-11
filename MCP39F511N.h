@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include <SoftwareSerial.h>
 
 //#define MCP_DEBUG
 
@@ -102,7 +101,7 @@ class MCP39F511N
     uint8_t _pin_rx;
     uint8_t _pin_tx;
     uint32_t _baud_rate;
-    SoftwareSerial * _ser;
+    Stream* _ser;
 
     uint16_t ssr;     // system status register
     uint16_t volts;   // volts  * 10^1
@@ -172,7 +171,7 @@ class MCP39F511N
     void _buf_append(uint8_t b);
 
   public:
-    MCP39F511N(uint8_t pin_rx, uint8_t pin_tx, uint32_t baud_rate);
+	  MCP39F511N(Stream* ser);
 
     void readPower();
     void readRange();
